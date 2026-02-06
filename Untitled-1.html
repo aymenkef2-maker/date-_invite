@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Request</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff0f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        h1 { color: #ff4d6d; }
+        p { color: #590d22; font-size: 1.1rem; }
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; }
+        #noBtn { background-color: #adb5bd; color: white; position: absolute; left: 220px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="main-content">
+            <h1>l3bda ta3i hello! 👋</h1>
+            <p>I was thinking... we'd look pretty good getting some coffee my lovely daughter bichou (or dinner) together. ☕✨</p>
+            <p><strong>Would you like to go out with me y 3iniya?</strong></p>
+            
+            <div class="buttons">
+                <button id="yesBtn" onclick="celebrate()">Yes!</button>
+                <button id="noBtn" onmouseover="moveButton()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // This makes the "No" button run away when she tries to click it
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            const content = document.getElementById('main-content');
+            content.innerHTML = `
+                <h1>ha lhdra! ❤️</h1>
+                <p>Smart choice (u have no choice) good girl. I'll text u to figure out the details!</p>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueGZ3bmZqZzR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/c76IJLufpNUMo/giphy.gif" width="200" style="border-radius:10px;">
+            `;
+        }
+    </script>
+</body>
+</html>
